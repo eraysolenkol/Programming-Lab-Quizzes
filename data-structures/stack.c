@@ -75,8 +75,10 @@ int pop(Node** top) {
     if (isEmpty(*top)) {
         return -1;
     }
+    Node* temp = (*top);
     int value = (*top)->data;
     (*top) = (*top)->next;
+    free(temp);
     return value;
 }
 
